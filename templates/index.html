@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRouter Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OpenRouter Chat</h1>
+            <div class="settings">
+                <label for="model-input">Model:</label>
+                <input type="text" id="model-input" value="amazon/nova-2-lite-v1:free">
+
+                <label for="temp-input">Temp:</label>
+                <input type="number" id="temp-input" step="0.1" min="0" max="2" value="0.7">
+
+                <label for="tokens-input">Max Tokens:</label>
+                <input type="number" id="tokens-input" step="1" min="1" placeholder="Optional">
+            </div>
+        </header>
+        <div id="chat-window" class="chat-window">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
